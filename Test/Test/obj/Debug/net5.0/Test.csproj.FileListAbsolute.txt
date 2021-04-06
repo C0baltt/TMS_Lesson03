@@ -1,0 +1,16 @@
+D:\DEV\TMS\Lesson03\Test\Test\bin\Debug\net5.0\Test.exe
+D:\DEV\TMS\Lesson03\Test\Test\bin\Debug\net5.0\Test.deps.json
+D:\DEV\TMS\Lesson03\Test\Test\bin\Debug\net5.0\Test.runtimeconfig.json
+D:\DEV\TMS\Lesson03\Test\Test\bin\Debug\net5.0\Test.runtimeconfig.dev.json
+D:\DEV\TMS\Lesson03\Test\Test\bin\Debug\net5.0\Test.dll
+D:\DEV\TMS\Lesson03\Test\Test\bin\Debug\net5.0\ref\Test.dll
+D:\DEV\TMS\Lesson03\Test\Test\bin\Debug\net5.0\Test.pdb
+D:\DEV\TMS\Lesson03\Test\Test\obj\Debug\net5.0\Test.csprojAssemblyReference.cache
+D:\DEV\TMS\Lesson03\Test\Test\obj\Debug\net5.0\Test.GeneratedMSBuildEditorConfig.editorconfig
+D:\DEV\TMS\Lesson03\Test\Test\obj\Debug\net5.0\Test.AssemblyInfoInputs.cache
+D:\DEV\TMS\Lesson03\Test\Test\obj\Debug\net5.0\Test.AssemblyInfo.cs
+D:\DEV\TMS\Lesson03\Test\Test\obj\Debug\net5.0\Test.csproj.CoreCompileInputs.cache
+D:\DEV\TMS\Lesson03\Test\Test\obj\Debug\net5.0\Test.dll
+D:\DEV\TMS\Lesson03\Test\Test\obj\Debug\net5.0\ref\Test.dll
+D:\DEV\TMS\Lesson03\Test\Test\obj\Debug\net5.0\Test.pdb
+D:\DEV\TMS\Lesson03\Test\Test\obj\Debug\net5.0\Test.genruntimeconfig.cache
