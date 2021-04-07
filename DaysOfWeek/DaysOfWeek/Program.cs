@@ -4,7 +4,7 @@ namespace DaysOfWeek
 {
     class Program
     {
-        enum DaysOfWeek
+       /* enum DaysOfWeek
         {
             Monday = 1,
             Tuesday,
@@ -13,7 +13,7 @@ namespace DaysOfWeek
             Friday,
             Saturday,
             Sunday
-        }
+        }*/
 
 
         static void Main(string[] args)
