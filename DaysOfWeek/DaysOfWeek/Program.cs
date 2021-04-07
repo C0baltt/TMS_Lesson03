@@ -4,19 +4,15 @@ namespace DaysOfWeek
 {
     class Program
     {
-
         static void Main(string[] args)
         {
             for (int i =1; i < 8; i++)
             {
-
-
-
-                ///* Для ручной проверки раскоментируй здесь, закомментируй стоку 19
+                /* Для ручной проверки раскоментируй здесь, закомментируй стоку 19
                 Console.WriteLine($"{i}\nВведи день недели:");
                 string temp = Console.ReadLine();//*/
 
-                /* //Для автоматической проверки раскоментируй здесь, закомментируй стоку 15
+                 //Для автоматической проверки раскоментируй здесь, закомментируй стоку 15
                  string temp = null;
                 switch (i)
                 {
@@ -45,50 +41,48 @@ namespace DaysOfWeek
                         break;
                 }//*/
 
-
-
                 string day;
                 int numberOfDay;
 
                 if ((temp == "Mon") || temp == "Monday")
                 {
-                    day = "Monday = ";
+                    day = "Monday";
                     numberOfDay = 1;
                     Console.ForegroundColor = ConsoleColor.Green;
                 }
                 else if ((temp == "Tue") || temp == "Tuesday")
                 {
-                    day = "Tuesday = ";
+                    day = "Tuesday";
                     numberOfDay = 2;
                     Console.ForegroundColor = ConsoleColor.Red;
                 }
                 else if ((temp == "Wed") || temp == "Wednesday")
                 {
-                    day = "Wednesday = ";
+                    day = "Wednesday";
                     numberOfDay = 3;
                     Console.ForegroundColor = ConsoleColor.Yellow;
                 }
                 else if ((temp == "Thu") || temp == "Thursday")
                 {
-                    day = "Thursday = ";
+                    day = "Thursday";
                     numberOfDay = 4;
                     Console.ForegroundColor = ConsoleColor.Gray;
                 }
                 else if ((temp == "Fri") || temp == "Friday")
                 {
-                    day = "Friday = ";
+                    day = "Friday";
                     numberOfDay = 5;
                     Console.ForegroundColor = ConsoleColor.Magenta;
                 }
                 else if ((temp == "Sat") || temp == "Saturday")
                 {
-                    day = "Saturday = ";
+                    day = "Saturday";
                     numberOfDay = 6;
                     Console.ForegroundColor = ConsoleColor.Cyan;
                 }
                 else if ((temp == "Sun") || temp == "Sunday")
                 {
-                    day = "Sunday = ";
+                    day = "Sunday";
                     numberOfDay = 7;
                     Console.ForegroundColor = ConsoleColor.Blue;
                 }
@@ -100,8 +94,7 @@ namespace DaysOfWeek
                     Console.BackgroundColor = ConsoleColor.White;
                 }
 
-
-                Console.Write(day);
+                Console.Write($"{day} = ");
                 if (numberOfDay != 0)
                 {
                     int daysBeforeTheWeekend = 6 - numberOfDay;
@@ -118,9 +111,8 @@ namespace DaysOfWeek
                     {
                         int diferent = numberOfDay - (int)DateTime.Today.DayOfWeek;
                         if (diferent < 0) diferent += 7;
-                        Console.WriteLine($"Следующий день нелели {day} будет {DateTime.Today.AddDays(diferent)}");
+                        Console.WriteLine($"Следующий день недели {day} будет {DateTime.Today.AddDays(diferent)}");
                     }
-
                 }
                 Console.ResetColor(); // сбрасываем в стандартный
                 Console.WriteLine();
