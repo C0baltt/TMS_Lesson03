@@ -6,7 +6,7 @@ namespace DaysOfWeek
     {
         static void Main(string[] args)
         {
-            for (int i =1; i < 8; i++)
+            for (int i =1; i < 9; i++)
             {
                 /* Для ручной проверки раскоментируй здесь, закомментируй стоку 19
                 Console.WriteLine($"{i}\nВведи день недели:");
@@ -37,54 +37,69 @@ namespace DaysOfWeek
                     case 7:
                         temp = "Sun";
                         break;
+                    case 8:
+                        temp = "Error";
+                        break;
                     default:
                         break;
                 }//*/
 
-                string day;
+                string day = null;
                 int numberOfDay;
+
+                switch (day)
+                {
+                    case "mon" or "monday":
+                        day = "Monday";
+                        numberOfDay = 1;
+                        Console.ForegroundColor = ConsoleColor.Green;//Green = 10,
+                        break;
+
+                    default:
+                        break;
+                }
 
                 if ((temp == "Mon") || temp == "Monday")
                 {
                     day = "Monday";
                     numberOfDay = 1;
-                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.ForegroundColor = ConsoleColor.Green;//Green = 10,
                 }
                 else if ((temp == "Tue") || temp == "Tuesday")
                 {
                     day = "Tuesday";
                     numberOfDay = 2;
-                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.ForegroundColor = ConsoleColor.Red;//Red = 12
                 }
                 else if ((temp == "Wed") || temp == "Wednesday")
                 {
                     day = "Wednesday";
                     numberOfDay = 3;
-                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.ForegroundColor = ConsoleColor.Yellow;//Yellow = 14,
                 }
                 else if ((temp == "Thu") || temp == "Thursday")
                 {
                     day = "Thursday";
                     numberOfDay = 4;
-                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.ForegroundColor = ConsoleColor.DarkGray;//Gray = 7,White
                 }
                 else if ((temp == "Fri") || temp == "Friday")
                 {
                     day = "Friday";
                     numberOfDay = 5;
-                    Console.ForegroundColor = ConsoleColor.Magenta;
+                    Console.ForegroundColor = ConsoleColor.Magenta;//Magenta = 13,
                 }
                 else if ((temp == "Sat") || temp == "Saturday")
                 {
                     day = "Saturday";
                     numberOfDay = 6;
-                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.ForegroundColor = ConsoleColor.Cyan;//Cyan = 11,
                 }
                 else if ((temp == "Sun") || temp == "Sunday")
                 {
                     day = "Sunday";
                     numberOfDay = 7;
-                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.ForegroundColor = ConsoleColor.Blue;//Blue = 9,
                 }
                 else
                 {
@@ -92,11 +107,12 @@ namespace DaysOfWeek
                     numberOfDay = 0;
                     Console.ForegroundColor = ConsoleColor.Black;
                     Console.BackgroundColor = ConsoleColor.White;
+                    Console.Write(day);
                 }
-
-                Console.Write($"{day} = ");
+                
                 if (numberOfDay != 0)
                 {
+                    Console.Write($"{day} = ");
                     int daysBeforeTheWeekend = 6 - numberOfDay;
                     if (daysBeforeTheWeekend < 0) daysBeforeTheWeekend = 0;
                     Console.WriteLine($"{numberOfDay} До выходных осталось {daysBeforeTheWeekend} дней");
