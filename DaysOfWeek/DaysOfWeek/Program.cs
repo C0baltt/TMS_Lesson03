@@ -6,14 +6,11 @@ namespace DaysOfWeek
     {
         static void Main(string[] args)
         {
-            for (int i =1; i < 9; i++)
+            for (int i = 1; i < 9; i++)
             {
-                /* Для ручной проверки раскоментируй здесь, закомментируй стоку 19
-                Console.WriteLine($"{i}\nВведи день недели:");
-                string temp = Console.ReadLine();//*/
-
-                 //Для автоматической проверки раскоментируй здесь, закомментируй стоку 15
-                 string temp = null;
+                /*//====================для отладки, в финальной версии удалить=============================================
+                //Для автоматической проверки раскоментируй здесь, закомментируй стоку 46
+                string temp = null;
                 switch (i)
                 {
                     case 1:
@@ -43,91 +40,88 @@ namespace DaysOfWeek
                     default:
                         break;
                 }//*/
+                //===================================================================
 
-                string day = null;
-                int numberOfDay;
+                //Для ручной проверки раскоментируй здесь, закомментируй стоку 19
+                Console.WriteLine($"{i}\nВведи день недели. Для выхода введи \"quit\" или \"exit\" или \"q\"");
+                string temp = Console.ReadLine();//*/
+                temp = temp.Trim().ToLower();
 
-                switch (day)
+                DayOfWeek day = DayOfWeek.Monday;
+
+                bool thisDayDoesNotExist = false;
+
+                switch (temp)
                 {
                     case "mon" or "monday":
-                        day = "Monday";
-                        numberOfDay = 1;
-                        Console.ForegroundColor = ConsoleColor.Green;//Green = 10,
+                        day = DayOfWeek.Monday;
+                        Console.ForegroundColor = ConsoleColor.Green;
                         break;
-
+                    case "tue" or "tuesday":
+                        day = DayOfWeek.Tuesday;
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        break;
+                    case "wed" or "wednesday":                        
+                        day = DayOfWeek.Wednesday;
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        break;
+                    case "thu" or "thursday":
+                        day = DayOfWeek.Thursday;
+                        Console.ForegroundColor = ConsoleColor.DarkGray;
+                        break;
+                    case "fri" or "friday":
+                        day = DayOfWeek.Friday;
+                        Console.ForegroundColor = ConsoleColor.Magenta;
+                        break;
+                    case "sat" or "saturday":
+                        day = DayOfWeek.Saturday;
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        break;
+                    case "sun" or "sunday":
+                        day = DayOfWeek.Sunday;
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        break;
+                    case "quit" or "exit" or "q":
+                        return;
+                        break;
                     default:
-                        break;
-                }
+                        Console.ForegroundColor = ConsoleColor.Black;
+                        Console.BackgroundColor = ConsoleColor.White;
+                        Console.Write("Такого дня недели не существует\n");
+                        thisDayDoesNotExist = true;
+                        //Console.ResetColor();
 
-                if ((temp == "Mon") || temp == "Monday")
-                {
-                    day = "Monday";
-                    numberOfDay = 1;
-                    Console.ForegroundColor = ConsoleColor.Green;//Green = 10,
-                }
-                else if ((temp == "Tue") || temp == "Tuesday")
-                {
-                    day = "Tuesday";
-                    numberOfDay = 2;
-                    Console.ForegroundColor = ConsoleColor.Red;//Red = 12
-                }
-                else if ((temp == "Wed") || temp == "Wednesday")
-                {
-                    day = "Wednesday";
-                    numberOfDay = 3;
-                    Console.ForegroundColor = ConsoleColor.Yellow;//Yellow = 14,
-                }
-                else if ((temp == "Thu") || temp == "Thursday")
-                {
-                    day = "Thursday";
-                    numberOfDay = 4;
-                    Console.ForegroundColor = ConsoleColor.DarkGray;//Gray = 7,White
-                }
-                else if ((temp == "Fri") || temp == "Friday")
-                {
-                    day = "Friday";
-                    numberOfDay = 5;
-                    Console.ForegroundColor = ConsoleColor.Magenta;//Magenta = 13,
-                }
-                else if ((temp == "Sat") || temp == "Saturday")
-                {
-                    day = "Saturday";
-                    numberOfDay = 6;
-                    Console.ForegroundColor = ConsoleColor.Cyan;//Cyan = 11,
-                }
-                else if ((temp == "Sun") || temp == "Sunday")
-                {
-                    day = "Sunday";
-                    numberOfDay = 7;
-                    Console.ForegroundColor = ConsoleColor.Blue;//Blue = 9,
-                }
-                else
-                {
-                    day = "Такого дня недели не существует!";
-                    numberOfDay = 0;
-                    Console.ForegroundColor = ConsoleColor.Black;
-                    Console.BackgroundColor = ConsoleColor.White;
-                    Console.Write(day);
-                }
+                        break;
+                }               
                 
-                if (numberOfDay != 0)
+                if (thisDayDoesNotExist == false)
                 {
-                    Console.Write($"{day} = ");
-                    int daysBeforeTheWeekend = 6 - numberOfDay;
-                    if (daysBeforeTheWeekend < 0) daysBeforeTheWeekend = 0;
-                    Console.WriteLine($"{numberOfDay} До выходных осталось {daysBeforeTheWeekend} дней");
+                    Console.Write($"{day}");
+                    var daysBeforeTheWeekend = DayOfWeek.Saturday - day;
+                    
+                    if ((daysBeforeTheWeekend < 0) || (daysBeforeTheWeekend > 5))
+                    { 
+                        daysBeforeTheWeekend = 0; 
+                    }
+                    Console.WriteLine($". Порядковый номер дня недели {(int)day}. До выходных осталось {daysBeforeTheWeekend} дней");
 
                     Console.ResetColor(); // сбрасываем в стандартный
 
-                    if ((int)DateTime.Today.DayOfWeek == numberOfDay)
+                    var numderOfDaysOfTheWeek = 7;//чтобы не было магических чисел, создаю переменную
+                    if (DateTime.Today.DayOfWeek == day)
                     {
-                        Console.WriteLine($"Сегодня как раз {DateTime.Today.DayOfWeek}, следующий будет {DateTime.Today.AddDays(7)}");
+                        
+                        Console.WriteLine($"Сегодня как раз {DateTime.Today.DayOfWeek}, следующий будет {DateTime.Today.AddDays(numderOfDaysOfTheWeek).ToShortDateString()}");
+                        DateTime.Today.AddDays((int)DayOfWeek.Sunday);
                     }
                     else
                     {
-                        int diferent = numberOfDay - (int)DateTime.Today.DayOfWeek;
-                        if (diferent < 0) diferent += 7;
-                        Console.WriteLine($"Следующий день недели {day} будет {DateTime.Today.AddDays(diferent)}");
+                        var diferent = day - DateTime.Today.DayOfWeek;
+                        if (diferent < 0) 
+                        {
+                            diferent += numderOfDaysOfTheWeek; 
+                        }
+                        Console.WriteLine($"Следующий день недели {day} будет {DateTime.Today.AddDays(diferent).ToShortDateString()}");
                     }
                 }
                 Console.ResetColor(); // сбрасываем в стандартный
